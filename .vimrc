@@ -30,9 +30,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
 Plugin 'wincent/command-t'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tbastos/vim-lua'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,57 +53,62 @@ filetype plugin indent on    " required
 syntax enable
 
 "Enable line numbers"
-set nu 
+set nu
 
 "Confirm edited or readonly"
-set confirm 
+set confirm
 
 "solarized setting"
+set t_Co=256
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme solarized8
 
 "highlight search"
 set hlsearch
 
 "turn off back file"
-set nobackup 
+set nobackup
 
 "turn off swap file"
-set noswapfile 
+set noswapfile
 
 "turn off buffer"
-set bufhidden=hide 
+set bufhidden=hide
 
 "command line completion"
-set wildmenu 
+set wildmenu
 
 "h & l move between line"
-set whichwrap+=h,l 
+set whichwrap+=h,l
 
 "show match when insert"
-set showmatch 
+set showmatch
 
 "show pattern when search"
-set incsearch 
+set incsearch
 
 "minimum scroll keep line numbers"
 set scrolloff=3
-	
+
 "tab spaces"
-set tabstop=4 
+set tabstop=4
 
 "use spaces for tab"
-set expandtab 
+set expandtab
 
 "copy indent from old line"
-set autoindent 
+set autoindent
 
 "insert or bs spaces"
-set softtabstop=4 
+set softtabstop=4
 
 "new line spaces"
 set shiftwidth=4
 
 "nerdtree toggle"
 nnoremap <F10> :exe 'NERDTreeToggle'<CR>
+
+highlight ExtraWhitespace ctermbg=yellow guibg=yellow
+match ExtraWhitespace /\s\+$\|\t/
+
+set backspace=2
